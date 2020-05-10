@@ -14,7 +14,8 @@ const cook = (ingredient) =>
         case '🥑':
         case '🥕':
         case '🥦':
-        case '':
+        case '🥒':
+        case '🍅':
           resolve('🥗');
         default:
           reject('💩');
