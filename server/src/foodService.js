@@ -19,14 +19,14 @@ const cook = (ingredient) =>
         default:
           reject('💩');
       }
-    }, 2000);
+    }, 1000);
   });
 
 const deliver = (dish) =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(`Delivered ${dish} via 🛵. Enjoy your meal!`);
-    }, 2000);
+    }, 1000);
   });
 
 module.exports = {

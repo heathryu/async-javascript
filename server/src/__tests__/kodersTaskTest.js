@@ -1,6 +1,10 @@
-const { cookTwoDishes, cookAndDeliver,cookMassiveMeal } = require('../kodersTask');
+const {
+  cookTwoDishes,
+  cookAndDeliver,
+  cookMassiveMeal,
+} = require('../kodersTask');
 
-describe('Koders Tasks', () => {
+describe('Koders Task', () => {
   describe('cookAndDeliver', () => {
     it('should resolve to expected value', async () => {
       const result = cookAndDeliver('🐔');

@@ -1,23 +1,43 @@
 const { cook, deliver } = require('./foodService');
 
 const cookAndDeliver = (ingredient) => {
-  // You should return a promise that resolves to a string in the format of
-  // 'Delivered ${dish} via 🛵. Enjoy your meal!'
-  // using the imported cook and deliver functions
+  return cook(ingredient).then(deliver);
 };
+
+// const cookAndDeliver = async (ingredient) => {
+//   const food = await cook(ingredient);
+
+//   return await deliver(food)
+// };
 
 const cookTwoDishes = (firstIngredient, secondIngredient) => {
-  // You should return a promise that resolves to a string in the format of
-  // 'firstDish and secondDish'
-  // using the imported cook function
+  return Promise.all([cook(firstIngredient), cook(secondIngredient)]).then(
+    ([firstDish, secondDish]) => `${firstDish} and ${secondDish}`
+  );
 };
 
-// Bonus points for this question!
+// const cookTwoDishes = async (firstIngredient, secondIngredient) => {
+//   const result = await Promise.all([
+//     cook(firstIngredient),
+//     cook(secondIngredient),
+//   ]);
+
+//   return `${result[0]} and ${result[1]}`;
+// };
+
 const cookMassiveMeal = (...ingredients) => {
-  // You should return a promise that resolves to a string in the format of
-  // 'firstDish, secondDish, thirdDish, ..., n-thDish'
-  // using the imported cook function
+  const promises = ingredients.map(cook);
+
+  return Promise.all(promises).then((resolvedValues) =>
+    resolvedValues.join(', ')
+  );
 };
+
+// const cookMassiveMeal = async (...ingredients) => {
+//   const promises = ingredients.map(cook);
+
+//   return (await Promise.all(promises)).join(', ');
+// };
 
 module.exports = {
   cookTwoDishes,

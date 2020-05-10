@@ -7,6 +7,7 @@
     "start:browser": "parcel browser/index.html",
     "start:callback": "nodemon server/src/callback.js -w server/src/callback.js",
     "start:promise": "nodemon server/src/promise.js -w server/src/promise.js",
+    "start:async-await": "nodemon server/src/asyncAwait.js -w server/src/asyncAwait.js",
     "test": "jest --watch"
   },
   "author": "Heath Ryu",
