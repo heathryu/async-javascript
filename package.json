@@ -1,0 +1,26 @@
+{
+  "name": "async-javascript",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/src/index.js",
+    "start:browser": "parcel browser/index.html",
+    "start:callback": "nodemon server/src/callback.js -w server/src/callback.js",
+    "start:promise": "nodemon server/src/promise.js -w server/src/promise.js",
+    "test": "jest --watch"
+  },
+  "author": "Heath Ryu",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "request": "^2.88.2"
+  }
+}
